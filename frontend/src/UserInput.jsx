@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
 function UserInputCard({ onDataChange }) {
-    const [income, setIncome] = useState('');
+    const [expenditure, setExpenditure] = useState('');
     const [adults, setAdults] = useState(2);
     const [children, setChildren] = useState(0);
     const [cpi, setCPI] = useState(0);
 
     const handleInputChange = (field, value) => {
-        if (field === 'income') {
-            setIncome(value);
+        if (field === 'expenditure') {
+            setExpenditure(value);
         } else if (field === 'adults') {
             setAdults(value);
         } else if (field === 'cpi') {
@@ -38,12 +38,12 @@ function UserInputCard({ onDataChange }) {
 
               {/* Income Input */}
               <div className="mb-4">
-                  <label htmlFor="income" className="block text-gray-700 mb-2">Weekly Income:</label>
+                  <label htmlFor="income" className="block text-gray-700 mb-2">Weekly Expenditure:</label>
                   <input
                     type="number"
-                    id="income"
-                    placeholder="Enter your income (eg. 1200)"
-                    value={income}
+                    id="expenditure"
+                    placeholder="Enter your weekly expenditure (eg. 500)"
+                    value={expenditure}
                     onChange={e => handleInputChange('income', e.target.value)}
                     className="w-full p-2 border rounded"
                   />

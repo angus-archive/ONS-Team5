@@ -4,7 +4,7 @@ import UserInputCard from "./UserInput.jsx";
 function App() {
 
   const [formData, setFormData] = useState({
-      income: '',
+      expenditure: '',
       cpi: '',
       adults: 2,
       children: 0
@@ -14,7 +14,7 @@ function App() {
   const [results, setResults] = useState(null);
 
   useEffect(() => {
-    if (formData.income !== '' || formData.cpi !== '') { // Change this condition based on when you want to make the request
+    if (formData.expenditure !== '' || formData.cpi !== '') { // Change this condition based on when you want to make the request
       setLoading(true);
 
       // Here, I'm using the Fetch API for the AJAX request. You can replace this with your preferred method.
