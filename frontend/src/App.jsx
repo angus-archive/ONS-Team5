@@ -22,10 +22,12 @@ function App() {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(formData)
+
       })
         .then(response => response.json())
         .then(data => {
           setResults(data);
+          console.log(data)
           setLoading(false);
         })
         .catch(err => {
@@ -43,17 +45,18 @@ function App() {
   // To see changes
   console.log(formData);
 
-  const renderMessageBasedOnValue = (value) => {
-    if (value < 1000) {
-      return "Example message 1";
-    } else if (value >= 1000 && value <= 5000) {
-      return "Example 2";
-    } else {
-      return "Example 3";
+  // const renderMessageBasedOnValue = (valueStr) => {
+  //   const value = parseFloat(valueStr.replace('£', ''));
 
-    }
+  //   if (value < 1000) {
+  //     return "You've got plenty of money, give some to charity";
+  //   } else if (value >= 1000 && value <= 3000) {
+  //     return "";
+  //   } else {
+  //     return "You don't have much money left after paying your bills";
+  //   }
 
-  };
+  // };
 
 
   return (
@@ -62,7 +65,7 @@ function App() {
       {/* Navbar */}
       <nav className="bg-blue-500 p-4 text-white">
         <div className="container mx-auto">
-          <h1 className="text-2xl font-bold">The Thing 1.0</h1>
+          <h1 className="text-2xl font-bold">The Thing 1.1</h1>
         </div>
       </nav>
 
@@ -70,6 +73,10 @@ function App() {
       <header className="">
         <section className="hero py-20">
           <div className="container mx-auto text-center">
+   
+            <img className="text-center mx-auto" src="/logo.png" />
+
+            {/*
             <h1 className="text-4xl mb-4">Welcome to The Thing 1.0</h1>
             <p className="text-gray-600 mb-8">
               A data visualisation tool
@@ -82,6 +89,7 @@ function App() {
                   <li>View results</li>
               </ol>
             </div>
+  */}
             <div className="my-10">
               <UserInputCard onDataChange={handleDataChange} />
             </div>
@@ -102,22 +110,21 @@ function App() {
           <span className="sr-only">Loading...</span>
         </div>
         }
-
         {!loading && results &&(
           <div className="my-10 flex justify-center items-center">
             <div className="text-center p-10 bg-white rounded-xl shadow-lg">
-              <span className="text-6xl font-bold block">£{results.value}</span>
-              <p className="mt-4 text-xl">{renderMessageBasedOnValue(results.value)}</p>
+              <p className='mb-3'>Your new expenditure...</p>
+              <span className="text-6xl font-bold block">{results}</span>
+              {/* <p className="mt-4 text-xl">{renderMessageBasedOnValue(results)}</p> */}
             </div>
           </div>
         )}
       </main>
 
-
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-6">
         <div className="container mx-auto text-center">
-          <p>&copy; {new Date().getFullYear()} The Thing 1.0</p>
+          <p>&copy; {new Date().getFullYear()} The Thing 1.1</p>
         </div>
       </footer>
 

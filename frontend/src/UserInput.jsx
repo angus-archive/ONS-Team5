@@ -25,11 +25,11 @@ function UserInputCard({ onDataChange }) {
 
               {/* CPI */}
               <div className="mb-4">
-                  <label htmlFor="cpi" className="block text-gray-700 mb-2">CPI:</label>
+                  <label htmlFor="cpi" className="block text-gray-700 mb-2">Forecast CPI:</label>
                   <input
                     type="number"
                     id="cpi"
-                    placeholder="Enter the current CPI value:"
+                    placeholder=""
                     value={cpi}
                     onChange={e => handleInputChange('cpi', e.target.value)}
                     className="w-full p-2 border rounded"
@@ -42,7 +42,7 @@ function UserInputCard({ onDataChange }) {
                   <input
                     type="number"
                     id="expenditure"
-                    placeholder="Enter your weekly expenditure (eg. 500)"
+                    placeholder=""
                     value={expenditure}
                     onChange={e => handleInputChange('expenditure', e.target.value)}
                     className="w-full p-2 border rounded"
@@ -50,6 +50,7 @@ function UserInputCard({ onDataChange }) {
               </div>
 
               {/* Adults Input */}
+              {/*
               <div className="mb-4">
                   <label className="block text-gray-700 mb-2">Number of Adults:</label>
                   <div className="flex items-center">
@@ -63,8 +64,10 @@ function UserInputCard({ onDataChange }) {
                       <button onClick={() => handleInputChange('adults', adults + 1)} className="px-3 py-2 border rounded-r">+</button>
                   </div>
               </div>
+              */}
 
               {/* Children Input */}
+              {/* 
               <div className="mb-4">
                   <label className="block text-gray-700 mb-2">Number of Children:</label>
                   <div className="flex items-center">
@@ -78,6 +81,7 @@ function UserInputCard({ onDataChange }) {
                       <button onClick={() => handleInputChange('children', children + 1)} className="px-3 py-2 border rounded-r">+</button>
                   </div>
               </div>
+            */}
           </div>
       </div>
     );
