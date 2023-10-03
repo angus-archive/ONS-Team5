@@ -44,7 +44,7 @@ function UserInputCard({ onDataChange }) {
                     id="expenditure"
                     placeholder="Enter your weekly expenditure (eg. 500)"
                     value={expenditure}
-                    onChange={e => handleInputChange('income', e.target.value)}
+                    onChange={e => handleInputChange('expenditure', e.target.value)}
                     className="w-full p-2 border rounded"
                   />
               </div>
