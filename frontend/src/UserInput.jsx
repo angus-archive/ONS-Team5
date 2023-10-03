@@ -2,14 +2,17 @@ import React, { useState } from 'react';
 
 function UserInputCard({ onDataChange }) {
     const [income, setIncome] = useState('');
-    const [adults, setAdults] = useState(0);
+    const [adults, setAdults] = useState(2);
     const [children, setChildren] = useState(0);
+    const [cpi, setCPI] = useState(0);
 
     const handleInputChange = (field, value) => {
         if (field === 'income') {
             setIncome(value);
         } else if (field === 'adults') {
             setAdults(value);
+        } else if (field === 'cpi') {
+            setCPI(value);
         } else if (field === 'children') {
             setChildren(value);
         }
@@ -19,9 +22,23 @@ function UserInputCard({ onDataChange }) {
     return (
       <div className="bg-white rounded p-6 w-full shadow-lg">
           <div className="flex flex-row justify-around">
+
+              {/* CPI */}
+              <div className="mb-4">
+                  <label htmlFor="cpi" className="block text-gray-700 mb-2">CPI:</label>
+                  <input
+                    type="number"
+                    id="cpi"
+                    placeholder="Enter the current CPI value:"
+                    value={cpi}
+                    onChange={e => handleInputChange('cpi', e.target.value)}
+                    className="w-full p-2 border rounded"
+                  />
+              </div>
+
               {/* Income Input */}
               <div className="mb-4">
-                  <label htmlFor="income" className="block text-gray-700 mb-2">Monthly Income:</label>
+                  <label htmlFor="income" className="block text-gray-700 mb-2">Weekly Income:</label>
                   <input
                     type="number"
                     id="income"
