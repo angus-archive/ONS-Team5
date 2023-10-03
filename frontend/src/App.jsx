@@ -18,7 +18,7 @@ function App() {
       setLoading(true);
 
       // Here, I'm using the Fetch API for the AJAX request. You can replace this with your preferred method.
-      fetch('/your-endpoint', {
+      fetch('http://127.0.0.1:5000/api/cpi/process', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
