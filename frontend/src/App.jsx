@@ -91,7 +91,7 @@ function App() {
         </div>
         }
 
-        {results && (
+        {!loading && results &&(
           <div className="my-10">
             {/* Render your results here. For simplicity, I'm JSON stringifying them. */}
             <pre>{JSON.stringify(results, null, 2)}</pre>
