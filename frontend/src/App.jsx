@@ -43,6 +43,18 @@ function App() {
   // To see changes
   console.log(formData);
 
+  const renderMessageBasedOnValue = (value) => {
+    if (value < 1000) {
+      return "Example message 1";
+    } else if (value >= 1000 && value <= 5000) {
+      return "Example 2";
+    } else {
+      return "Example 3";
+
+    }
+
+  };
+
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-100 ">
@@ -92,9 +104,11 @@ function App() {
         }
 
         {!loading && results &&(
-          <div className="my-10">
-            {/* Render your results here. For simplicity, I'm JSON stringifying them. */}
-            <pre>{JSON.stringify(results, null, 2)}</pre>
+          <div className="my-10 flex justify-center items-center">
+            <div className="text-center p-10 bg-white rounded-xl shadow-lg">
+              <span className="text-6xl font-bold block">£{results.value}</span>
+              <p className="mt-4 text-xl">{renderMessageBasedOnValue(results.value)}</p>
+            </div>
           </div>
         )}
       </main>
