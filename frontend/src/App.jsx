@@ -6,8 +6,6 @@ function App() {
   const [formData, setFormData] = useState({
       expenditure: '',
       cpi: '',
-      adults: 2,
-      children: 0
   });
 
   const [loading, setLoading] = useState(false);
